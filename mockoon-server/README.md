@@ -6,13 +6,17 @@ This project is a mock server created using Mockoon, designed to facilitate the 
 
 ```
 mockoon-server
-├── data.json                  # mock response and other configurations for the Mockoon 
-├── package.json               # npm configuration file
-├── .gitignore                 # Files and directories to ignore by Git
-└── README.md                  # Documentation for the project
+├── data.json                 # Mock response and other configurations for Mockoon 
+├── package.json              # npm configuration file
+├── Dockerfile                # Docker container configuration
+├── docker-compose.yml        # Docker Compose configuration
+├── .gitignore                # Files and directories to ignore by Git
+└── README.md                 # Documentation for the project
 ```
 
 ## Setup Instructions
+
+### Standard Setup
 
 1. Clone the repository:
    ```
@@ -28,6 +32,24 @@ mockoon-server
 3. Start the mock server:
    ```
    npm start
+   ```
+
+### Docker Setup
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd mockoon-server
+   ```
+
+2. Build and start the container using Docker Compose:
+   ```
+   docker-compose up -d
+   ```
+
+3. To stop the container:
+   ```
+   docker-compose down
    ```
 
 ## Usage
@@ -46,6 +68,20 @@ You can modify the `data.json` file to add more routes, responses, or customize 
 To customize the mock API:
 1. Edit the `data.json` file directly, or
 2. Use the Mockoon desktop application to create/modify your API and export the configuration to `data.json`
+
+When using Docker, the `data.json` file is mounted as a volume, so you can modify it without rebuilding the container.
+
+## Docker Configuration
+
+The project includes Docker configuration for easy deployment:
+
+- `Dockerfile`: Configures a Node.js 22 Alpine container to run the Mockoon server
+- `docker-compose.yml`: Sets up the container with appropriate port mapping and volume mounting
+
+### Customizing Docker Configuration
+
+- To change the port mapping, edit the `ports` section in `docker-compose.yml`
+- To add environment variables, add an `environment` section to the service in `docker-compose.yml`
 
 ## Contributing
 

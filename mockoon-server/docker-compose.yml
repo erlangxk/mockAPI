@@ -1,0 +1,9 @@
+services:
+  mockoon-server:
+    build: .
+    container_name: mockoon-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data.json:/app/data.json
+    restart: unless-stopped
