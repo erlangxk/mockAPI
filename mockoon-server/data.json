@@ -1,0 +1,66 @@
+{
+  "uuid": "11111111-2222-3333-4444-555555555555",
+  "lastMigration": 27,
+  "name": "Mock API Environment",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+      "documentation": "Get users endpoint",
+      "method": "get",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj",
+          "body": "{\n  \"users\": [\n    {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"john@example.com\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Jane Smith\",\n      \"email\": \"jane@example.com\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "default": true
+        }
+      ]
+    },
+    {
+      "uuid": "kkkkkkkk-llll-mmmm-nnnn-oooooooooooo",
+      "documentation": "Get user by ID",
+      "method": "get",
+      "endpoint": "users/:id",
+      "responses": [
+        {
+          "uuid": "pppppppp-qqqq-rrrr-ssss-tttttttttttt",
+          "body": "{\n  \"id\": \"{{urlParam 'id'}}\",\n  \"name\": \"User {{urlParam 'id'}}\",\n  \"email\": \"user{{urlParam 'id'}}@example.com\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "default": true
+        }
+      ]
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": []
+}

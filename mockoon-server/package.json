@@ -1,0 +1,20 @@
+{
+  "name": "mockoon-server",
+  "version": "1.0.0",
+  "description": "A mock server using Mockoon for simulating API responses.",
+  "scripts": {
+    "start": "mockoon-cli start --data data.json"
+  },
+  "dependencies": {
+    "@mockoon/cli": "^9.2.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "mock",
+    "server",
+    "testing",
+    "development"
+  ],
+  "author": "",
+  "license": "ISC"
+}
