@@ -12,12 +12,11 @@
       "documentation": "Get users endpoint",
       "method": "get",
       "endpoint": "users",
-      "latency": 3000,
       "responses": [
         {
           "uuid": "ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj",
           "body": "{\n  \"users\": [\n    {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"john@example.com\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Jane Smith\",\n      \"email\": \"jane@example.com\"\n    }\n  ]\n}",
-          "latency": 0,
+          "latency": 3000,
           "statusCode": 200,
           "label": "Success",
           "headers": [
