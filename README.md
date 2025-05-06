@@ -5,7 +5,7 @@ This project is a mock server created using Mockoon, designed to facilitate the 
 ## Project Structure
 
 ```
-mockoon-server
+mockAPI/
 ├── data.json                 # Mock response and other configurations for Mockoon 
 ├── package.json              # npm configuration file
 ├── Dockerfile                # Docker container configuration
@@ -21,7 +21,7 @@ mockoon-server
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd mockoon-server
+   cd mockAPI
    ```
 
 2. Install the dependencies:
@@ -39,7 +39,7 @@ mockoon-server
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd mockoon-server
+   cd mockAPI
    ```
 
 2. Build and start the container using Docker Compose:
@@ -58,10 +58,16 @@ Once the server is running, you can send requests to the defined routes in the `
 
 ### Example Endpoints
 
-- GET /users - Returns a list of users
+- GET /users - Returns a list of users (with a 3-second delay)
 - GET /users/:id - Returns a specific user by ID
 
 You can modify the `data.json` file to add more routes, responses, or customize existing ones.
+
+### Response Templates
+
+The API uses Mockoon's templating system:
+- URL parameters: `{{urlParam 'paramName'}}`
+- Example: `/users/123` will return a user with id "123"
 
 ## Customizing the Mock Server
 
@@ -70,6 +76,19 @@ To customize the mock API:
 2. Use the Mockoon desktop application to create/modify your API and export the configuration to `data.json`
 
 When using Docker, the `data.json` file is mounted as a volume, so you can modify it without rebuilding the container.
+
+### Adding Latency
+
+You can simulate network delays by setting the `latency` property (in milliseconds) in your response configurations:
+
+```json
+"responses": [
+  {
+    "latency": 3000,  // 3-second delay
+    ...
+  }
+]
+```
 
 ## Docker Configuration
 
