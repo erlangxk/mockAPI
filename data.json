@@ -12,6 +12,7 @@
       "documentation": "Get users endpoint",
       "method": "get",
       "endpoint": "users",
+      "latency": 3000,
       "responses": [
         {
           "uuid": "ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj",
